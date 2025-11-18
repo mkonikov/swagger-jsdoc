@@ -23,6 +23,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 ```
+g
 
 The library will take the contents of `@openapi` (or `@swagger`) with the following configuration:
 
