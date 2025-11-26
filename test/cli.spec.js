@@ -138,8 +138,16 @@ describe('CLI module', () => {
   });
 
   afterAll(() => {
-    fs.unlinkSync(`${dir}/swagger.json`);
-    fs.unlinkSync(`${dir}/customSpec.json`);
-    fs.unlinkSync(`${dir}/customSpec.yaml`);
+    const files = [
+      `${dir}/swagger.json`,
+      `${dir}/customSpec.json`,
+      `${dir}/customSpec.yaml`,
+    ];
+
+    for (const file of files) {
+      if (fs.existsSync(file)) {
+        fs.unlinkSync(file);
+      }
+    }
   });
 });

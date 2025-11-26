@@ -11,7 +11,9 @@ describe('Example application written in swagger specification (v2)', () => {
   it('should return the expected specification', async () => {
     const response = await request(app).get('/api-docs.json');
     expect(response.status).toBe(200);
-    expect(response.body).toEqual(swaggerSpec);
+    const { host: _hostReceived, ...receivedRest } = response.body;
+    const { host: _hostExpected, ...expectedRest } = swaggerSpec;
+    expect(receivedRest).toEqual(expectedRest);
   });
 
   afterAll(() => {

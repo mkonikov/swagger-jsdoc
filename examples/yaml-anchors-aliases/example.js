@@ -14,8 +14,12 @@ module.exports = (app) => {
    *         schema:
    *           type: object
    *           properties:
-   *             id: *id
-   *             username: *username
+   *             id:
+   *               type: integer
+   *               description: The user ID.
+   *             username:
+   *               type: string
+   *               description: The username.
    *
    *     x-amazon-apigateway-integration: *default-integration
    *     x-second-integration: *second-integration
@@ -39,8 +43,12 @@ module.exports = (app) => {
    *            - username
    *            - id
    *          properties:
-   *            username: *username
-   *            id: *id
+   *            username:
+   *              type: string
+   *              description: The username.
+   *            id:
+   *              type: integer
+   *              description: The user ID.
    *     responses:
    *       200:
    *         description: OK

@@ -8,7 +8,7 @@ const routes = require('./routes');
 const routes2 = require('./routes2');
 const swaggerJsdoc = require('../..');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || (process.env.NODE_ENV === 'test' ? 0 : 3000);
 
 // Initialize express
 const app = express();
